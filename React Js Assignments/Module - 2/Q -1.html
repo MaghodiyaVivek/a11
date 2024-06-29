@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>Product Info</th>
+    <th>Quantity</th>
+    <th>Price (per unit)</th>
+    <th>Price (subtotal)</th>
+  </tr>
+
+  
+  <tr>
+    <td><img src="  " alt="Product Image" width="50" height="50">
+        Fortunata Window Hardware - Decorative 
+        Holdbacks-Mocha</td>
+    <td><input type="number" id="quantity1" value="2" onchange="updateSubtotal(1)"></td>
+    <td>$29.99</td>
+    <td id="subtotal1">$59.98</td>
+    <td><button onclick="removeItem(1)">Remove</button></td>
+  </tr>
+
+
+
+  <tr>
+    <td><img src="https://i.imgur.com/10G5XhW.png" alt="Product Image" width="50" height="50">
+        Woven Trellis Window Hardware - Clip 
+        Rings - Bronze</td>
+    <td><input type="number" id="quantity2" value="1" onchange="updateSubtotal(2)"></td>
+    <td>$12.99</td>
+    <td id="subtotal2">$12.99</td>
+    <td><button onclick="removeItem(2)">Remove</button></td>
+  </tr>
+  <tr>
+    <td colspan="3"></td>
+    <td id="total">$72.97</td>
+  </tr>
+</table>
+
+<script>
+function updateSubtotal(row) {
+  var quantity = document.getElementById("quantity" + row).value;
+  var unitPrice = parseFloat(document.getElementById("subtotal" + row).innerText.replace('$', ''));
+  var subtotal = quantity * unitPrice;
+  document.getElementById("subtotal" + row).innerText = '$' + subtotal.toFixed(2);
+  updateTotal();
+}
+
+function removeItem(row) {
+  var subtotalElement = document.getElementById("subtotal" + row);
+  subtotalElement.innerText = '$0.00';
+  updateTotal();
+}
+
+function updateTotal() {
+  var total = 0;
+  for (var i = 1; i <= 2; i++) {
+    var subtotal = parseFloat(document.getElementById("subtotal" + i).innerText.replace('$', ''));
+    total += subtotal;
+  }
+  document.getElementById("total").innerText = '$' + total.toFixed(2);
+}
+</script>
+
+</body>
+</html>
