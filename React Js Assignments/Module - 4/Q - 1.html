@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List and Hooks</title>
+</head>
+<body>
+    <div style="background-color: rgb(224, 10, 217); width: 100%; height: 30PX;">
+    <h2 style="text-align: color: rgb(1, 1, 14);">Q. 1 Explain Life cycle in Class Component and functional component with Hooks</h2>
+
+        <ul>A React Component undergoes three phases in its lifecycle </ul>
+            <li>1). Initialization</li>
+            <li>2). Mouting</li>
+            <li>3). Update </li>
+            <li>4). Unmouting</li>
+             
+        <ul><h4>1). Initialization: </h4></ul>
+            
+            <li>when a new object is created from the class. Initializing the state within the constructor function</li>
+            <li>allows the state object to be created before React renders the component.</li>
+
+        <ul><h4>2). Mouting: Mouting is a phase when a new component is created and inserted in DOM.</h4></ul>
+            
+            <li>The componentDidMount lifecycle method executes once after initial rendering. If an empty dependency array is provided as the second argument,
+            the callback function executes only after initial rendering</li>
+
+        <ul><h4>3). Updating: It's a phase when component update or re-renders..</h4></ul>
+            
+            <li>componentDidUpdate is a lifecycle method in React that is called after a component has been updated and re-rendered. By default,
+                it executes after every render, including the initial rendering. </li>
+            <li>If a dependency array is provided, it will execute during the initial rendering and whenever any of
+                the specified values in the array change</li>
+            
+            
+
+        <ul><h4>4). Unmouting: Unmouting is the process when data can be remove from DOM.</h4></ul>
+
+            <li>The componentWillUnmount lifecycle method executes when the component is unmounted. If a function is returned from the call function,
+                that function executes when the component is unmounted.</li  
+        <div style="height: 100%; width: 50%;">
+            <img src="./image/1.png" alt="react-lifecycle-diagram" "/>
+        </div>
+    < /div>
+    
+</body>
+</html>
